@@ -9,10 +9,12 @@
     WHERE `cfu` > 10;
 
 3. Selezionare tutti gli studenti che hanno più di 30 anni
+    SELECT (YEAR(CURDATE()) - YEAR(`date_of_birth`))
+    FROM `students`
+    WHERE (YEAR(CURDATE()) - YEAR(`date_of_birth`)) > 30;
 
 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di
 laurea (286)
-
 
 5. Selezionare tutti gli appelli d'esame che avvengono nel pomeriggio (dopo le 14) del
 20/06/2020 (21)

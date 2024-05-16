@@ -105,6 +105,10 @@ laurea (286)
     GROUP BY `anno_immatricolazione`;
 
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
+    SELECT `office_address`, COUNT(`teachers`.`office_number`)
+    FROM `teachers`
+    GROUP BY `office_address`;
+
 3. Calcolare la media dei voti di ogni appello d'esame
     SELECT `exams`.`id`, AVG(`exam_student`.`vote`) AS `media_voti`
     FROM `exams`

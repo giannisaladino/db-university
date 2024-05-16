@@ -103,7 +103,12 @@ laurea (286)
     SELECT COUNT(id), YEAR(`students`. `enrolment_date`) AS `anno_immatricolazione`
     FROM `students`
     GROUP BY `anno_immatricolazione`;
-    
+
 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 3. Calcolare la media dei voti di ogni appello d'esame
+    SELECT `exams`.`id`, AVG(`exam_student`.`vote`) AS `media_voti`
+    FROM `exams`
+    INNER JOIN `exam_student`
+    ON `exams`.`id`= `exam_student`.`exam_id`
+    GROUP BY `exams`.`id`;
 4. Contare quanti corsi di laurea ci sono per ogni dipartimento
